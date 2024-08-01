@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Dropper Tool</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div class="color-dropper-container">
+      <div id="color-dropper-header" class="color-dropper-header">
+        <button class="picker-button">
+          <img alt="color-picker" src="src/assets/IconColorPicker.svg" />
+        </button>
+        <div class="color-hex-text"></div>
+        <div></div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <svg
+          id="zoom-svg"
+          height="160"
+          width="160"
+          viewBox="0 0 160 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="160" height="160">
+              <image xlink:href="" x="0" y="0" width="160" height="160" />
+            </pattern>
+          </defs>
+          <circle cx="80" cy="80" r="72" class="outer-ring" fill="#000000" />
+          <circle cx="80" cy="80" r="60" class="inner-circle" fill="url(#imagePattern)" />
+          <rect x="75" y="75" width="10" height="10" stroke="#000000" fill="none" />
+          <text x="80" y="80" fill="#000000" font-size="14">#000000</text>
+        </svg>
+
+        <canvas id="drawing-canvas"></canvas>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
